@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+/* in index.css or global CSS */
+html {
+  scroll-behavior: smooth;
+}
+
+/* src/index.css */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 1px;
+  border-radius: 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #bdc1bf; /* Tailwind's green-500 */
+  border-radius: 30px;
+}
+
+/* src/index.css or App.css */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

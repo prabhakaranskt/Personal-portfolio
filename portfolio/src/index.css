@@ -1,0 +1,14 @@
+/* Custom fonts */
+@font-face {
+  font-family: "MyFont";
+  src: url("/src/assets/Outfit/Outfit-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MyFontTwo";
+  src: url("/src/assets/Shrikhand/Shrikhand-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
