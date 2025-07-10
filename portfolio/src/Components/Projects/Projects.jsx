@@ -30,7 +30,7 @@ const projects = [
 
 const Projects = () => {
   const scrollRef = useRef();
-  const [lineWidth, setLineWidth] = useState(100); // Start with 90% width
+  const [lineWidth, setLineWidth] = useState(100);
 
   useEffect(() => {
     const el = scrollRef.current;
@@ -40,7 +40,7 @@ const Projects = () => {
       const scrollTop = el.scrollTop;
       const maxScroll = el.scrollHeight - el.clientHeight;
       const progress = scrollTop / maxScroll;
-      const newWidth = 100 - progress * 60; // Shrink from 90% to 30%
+      const newWidth = 100 - progress * 60;
       setLineWidth(Math.max(30, newWidth));
     };
 
@@ -49,24 +49,26 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="projects" className="py-12 px-4 md:px-20  ">
+    <section id="projects" className="py-12 px-4 md:px-20">
       {/* Heading */}
       <h2 className="text-3xl font-bold mb-8 text-center text-orange-400">
         Featured Projects
       </h2>
 
-      {/* Shrinking Full Line Below Heading */}
+      {/* Shrinking Line */}
       <div className="w-full flex justify-center mb-8">
         <div
           className="h-2 bg-orange-400 rounded-full transition-all duration-300"
           style={{ width: `${lineWidth}%` }}
-        ></div>
+        />
       </div>
 
       {/* Scrollable Project List */}
       <div
         ref={scrollRef}
-        className="max-h-[70vh] overflow-y-scroll custom-scrollbar flex flex-col space-y-10 px-2 sm:px-6 md:px-10"
+        className="max-h-[70vh] md:max-h-[65vh] overflow-y-scroll custom-scrollbar flex flex-col space-y-10 px-2 sm:px-6 md:px-10"
+        // On mobile, allow auto height for better UX
+        style={{ maxHeight: window.innerWidth < 768 ? "auto" : undefined }}
       >
         {projects.map((project, index) => (
           <motion.div

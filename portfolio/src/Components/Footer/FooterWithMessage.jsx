@@ -51,7 +51,7 @@ const FooterWithMessage = () => {
           <p className="text-gray-400 mb-6 max-w-sm">
             Feel free to reach out for collaborations or just a friendly hello!
           </p>
-          <div className="flex gap-6 mt-6 text-4xl">
+          <div className="flex sm:flex-wrap gap-6 mt-6 text-4xl">
             <a href="https://github.com/prabhakaranskt" target="_blank">
               <FaGithub />
             </a>
